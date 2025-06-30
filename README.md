@@ -192,13 +192,6 @@ GOWelfare/
 - Scikit-learn
 - Openpyxl (for Excel file handling)
 
-### Installation
-```bash
-git clone [repository-url]
-cd GOWelfare
-pip install -r requirements.txt
-```
-
 ### Data Files
 Ensure the following data files are in the `data/` directory:
 - `giftcard_model.csv`
@@ -206,10 +199,6 @@ Ensure the following data files are in the `data/` directory:
 - `giftcard_obf.csv`
 - `elected_giftcards_dec_2024_new.xlsx`
 
-### Usage
-```bash
-jupyter notebook analysis.ipynb
-```
 
 
 
