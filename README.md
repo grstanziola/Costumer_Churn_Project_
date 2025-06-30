@@ -1,5 +1,3 @@
-# Costumer_Churn_Project_
-
 # GOWelfare - Employee Welfare Platform Analytics
 
 ## Project Overview
@@ -15,7 +13,7 @@ GOWelfare is an employee welfare platform that provides an app for local purchas
 
 ## Dataset Description
 
-The project utilizes three main datasets:
+The project utilizes four main datasets:
 
 ### 1. `giftcard_model`
 Lists all giftcards available on the welfare application along with their associated brands.
@@ -56,6 +54,21 @@ Lists all giftcards bought by users.
 | `transaction_uuid_hash` | Hashed transaction UUID | 40,189 |
 | `client_email_hash` | Hashed client email | 9,053 |
 
+### 4. `elected_giftcards_dec_2024_new.xlsx`
+Contains daily selections of featured/recommended giftcard models for December 2024.
+
+| Column | Description | Details |
+|--------|-------------|---------|
+| `date` | Daily timestamp | December 1-31, 2024 (31 days) |
+| `giftcard_model_ids` | Array of selected model IDs | 15-30 selections per day |
+
+**Key Statistics:**
+- **Total selections**: 716 across 31 days
+- **Average per day**: 23.1 giftcard models featured
+- **Unique models featured**: 63 different giftcard models
+- **Model ID range**: 1-110
+- **Selection range**: 15-30 models per day
+
 ## Key Financial Metrics (FY 2023)
 
 - **Total Turnover**: €2,299,656
@@ -68,11 +81,24 @@ Lists all giftcards bought by users.
 
 ### Best Performing Brands
 
-**By Volume:**
+**By Volume (FY 2023):**
 - **CondividiAcquista**: 4,771 giftcards sold, €95,420 total amount
 
-**By Revenue:**
+**By Revenue (FY 2023):**
 - **SupermercatoElite**: €125,415 earned from 2,424 giftcards
+
+### Featured Giftcard Models (December 2024)
+
+Analysis of daily featured giftcard selections reveals consistent top performers:
+
+**Most Featured Models:**
+1. **Model IDs 3, 4, 22, 34**: Each featured 31 times (100% of days)
+2. **Model ID 80**: Featured 27 times (87% of days)
+3. **Model ID 26**: Featured 25 times (81% of days)
+4. **Model ID 21**: Featured 24 times (77% of days)
+5. **Model IDs 8, 15**: Each featured 23 times (74% of days)
+
+These models demonstrate consistent selection for platform promotion, indicating either high popularity, strategic importance, or strong performance metrics.
 
 ### Category Distribution
 The platform offers 9 main categories:
@@ -143,13 +169,15 @@ GOWelfare/
 ├── data/
 │   ├── giftcard_model.csv
 │   ├── transaction.csv
-│   └── giftcard_obf.csv
+│   ├── giftcard_obf.csv
+│   └── elected_giftcards_dec_2024_new.xlsx
 ├── notebooks/
 │   └── analysis.ipynb
 ├── visualizations/
 │   ├── eda_charts/
 │   ├── user_segmentation/
-│   └── anomaly_detection/
+│   ├── anomaly_detection/
+│   └── featured_models_analysis/
 └── README.md
 ```
 
@@ -162,5 +190,26 @@ GOWelfare/
 - Matplotlib
 - Seaborn
 - Scikit-learn
+- Openpyxl (for Excel file handling)
+
+### Installation
+```bash
+git clone [repository-url]
+cd GOWelfare
+pip install -r requirements.txt
+```
+
+### Data Files
+Ensure the following data files are in the `data/` directory:
+- `giftcard_model.csv`
+- `transaction.csv` 
+- `giftcard_obf.csv`
+- `elected_giftcards_dec_2024_new.xlsx`
+
+### Usage
+```bash
+jupyter notebook analysis.ipynb
+```
+
 
 
